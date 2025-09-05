@@ -18,17 +18,18 @@ Este repositorio contiene la implementación y análisis del **Algoritmo de la P
 
 ## 📋 Contenido del Repositorio
 
-- [ ] Implementación del algoritmo
+- [x] Implementación del algoritmo en C
+- [x] Casos de prueba con números de n dígitos
+- [x] Pruebas con potencias de 2 (1, 2, 4, 8, 16, 32 dígitos)
 - [ ] Análisis de complejidad temporal y espacial
-- [ ] Casos de prueba
 - [ ] Documentación técnica
 - [ ] Presentación de resultados
 
 ## 🚀 Instalación y Uso
 
 ### Requisitos
-- Python 3.x (recomendado)
-- Compilador de C++ (opcional)
+- Compilador de C (gcc recomendado)
+- Sistema operativo compatible con C
 
 ### Ejecución
 ```bash
@@ -38,9 +39,35 @@ git clone https://github.com/[usuario]/Algoritmo-de-la-primaria.git
 # Navegar al directorio
 cd Algoritmo-de-la-primaria
 
+# Compilar el programa
+gcc -o multiplicacion_primaria multiplicacion_primaria.c
+
 # Ejecutar el algoritmo
-python algoritmo_primaria.py
+./multiplicacion_primaria
 ```
+
+### Características de la Implementación
+
+- **Manejo de números grandes**: Utiliza arreglos para representar números de hasta 1000 dígitos
+- **Algoritmo de la primaria**: Implementa el método tradicional de multiplicación
+- **Pruebas automáticas**: Incluye casos de prueba con diferentes tamaños de números
+- **Potencias de 2**: Prueba específicamente con números de 1, 2, 4, 8, 16 y 32 dígitos
+
+### Estructura del Código
+
+```c
+typedef struct {
+    int digitos[MAX_DIGITS];
+    int longitud;
+} Numero;
+```
+
+### Funciones Principales
+
+- `multiplicar_primaria()`: Función principal que implementa el algoritmo
+- `sumar_numeros()`: Suma dos números representados como arreglos
+- `multiplicar_por_digito()`: Multiplica un número por un dígito único
+- `desplazar_izquierda()`: Desplaza un número (multiplica por 10^n)
 
 ## 📊 Análisis de Complejidad
 
@@ -53,9 +80,25 @@ python algoritmo_primaria.py
 
 El proyecto incluye diversos casos de prueba para validar la correcta implementación del algoritmo:
 
-- Casos básicos
-- Casos límite
-- Casos de rendimiento
+### Casos Específicos
+- 123 × 456 = 56088
+- 999 × 999 = 998001
+- 12 × 34 = 408
+
+### Números Aleatorios
+- Pruebas con números de 1, 2, 4, 8, 16 y 32 dígitos (potencias de 2)
+- Números muy grandes: 12345678901234567890 × 98765432109876543210
+
+### Ejemplo de Salida
+```
+=== Algoritmo de Multiplicación de la Primaria ===
+Implementado en C usando arreglos para números de n dígitos
+
+=== Casos de Prueba Específicos ===
+123 * 456 = 56088 (Esperado: 56088)
+999 * 999 = 998001 (Esperado: 998001)
+12 * 34 = 408 (Esperado: 408)
+```
 
 ## 📈 Resultados
 
